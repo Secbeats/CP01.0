@@ -11,6 +11,21 @@
 |
 */
 
+
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::prefix('admin')->group(function(){
+
+});
+
+Route::prefix('donator')->group(function(){
+});
+
+Route::prefix('donee')->group(function(){
+
+});
+
+Auth::routes();

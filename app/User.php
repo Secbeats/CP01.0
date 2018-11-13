@@ -3,8 +3,8 @@
 namespace App;
 
 use Illuminate\Notifications\Notifiable;
-use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Support\Facades\Validator;
 
 class User extends Authenticatable
 {
@@ -16,8 +16,32 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'role',
     ];
+
+    protected $rules = array(
+        'name'  => 'required',
+        'email'  => 'required|email|unique:users',
+        'password' => 'required|min:8|max:100',
+        'role' => 'required|in:donator,donee,admin',
+    );
+    protected $errors;
+
+    public function validate($data)
+    {
+        $valid = Validator::make($data, $this->rules);
+        if ($valid->fails())
+        {
+            $this->errors = $valid->errors();
+            return false;
+        }
+        return true;
+    }
+
+    public function errors()
+    {
+        return $this->errors;
+    }
 
     /**
      * The attributes that should be hidden for arrays.

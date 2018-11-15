@@ -2,7 +2,7 @@
     <div class="container">
         <!--logo-->
         <div class="logo">
-            <h1><a href="index.html">Online Recharge</a></h1>
+            <h1><a href="{{ url('/') }}">Online Recharge</a></h1>
         </div>
         <!--//logo-->
         <div class="w3layouts-login">
@@ -31,71 +31,101 @@
                                 <!-- Tab panes -->
                                 <div class="tab-content">
                                     <div class="tab-pane active" id="Login">
-                                        <form  class="form-horizontal" action="#" method="get">
+                                        <form  class="form-horizontal" method="POST" action="{{ route('login') }}">
+                                            @csrf
                                             <div class="form-group">
                                                 <label for="email" class="col-sm-2 control-label">
                                                     Email</label>
                                                 <div class="col-sm-10">
-                                                    <input type="email" class="form-control" id="email1" placeholder="Email" required="required" />
+                                                    <input type="email" name="email" class="form-control {{ $errors->has('email') ? ' is-invalid' : '' }}" id="email1" placeholder="Email" value="{{ old('email') }}" required autofocus />
                                                 </div>
+                                                @if ($errors->has('email'))
+                                                    <span class="invalid-feedback" role="alert">
+                                                        <strong>{{ $errors->first('email') }}</strong>
+                                                    </span>
+                                                @endif
                                             </div>
                                             <div class="form-group">
                                                 <label for="exampleInputPassword1" class="col-sm-2 control-label">
                                                     Password</label>
                                                 <div class="col-sm-10">
-                                                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="password" required="required" />
+                                                    <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
+
+                                                    @if ($errors->has('password'))
+                                                        <span class="invalid-feedback" role="alert">
+                                                            <strong>{{ $errors->first('password') }}</strong>
+                                                        </span>
+                                                    @endif
                                                 </div>
                                             </div>
-                                            <div class="row">
-                                                <div class="col-sm-2">
+                                            <div class="form-group row">
+                                                <div class="col-md-6 offset-md-4">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+
+                                                        <label class="form-check-label" for="remember">
+                                                            {{ __('Remember Me') }}
+                                                        </label>
+                                                    </div>
                                                 </div>
-                                                <div class="col-sm-10">
-                                                    <button type="submit" class="submit btn btn-primary btn-sm">
-                                                        Submit</button>
-                                                    <a href="javascript:;" class="agileits-forgot">Forgot your password?</a>
+                                            </div>
+                                            <div class="form-group row mb-0">
+                                                <div class="col-md-8 offset-md-4">
+                                                    <button type="submit" class="btn btn-primary">
+                                                        {{ __('Login') }}
+                                                    </button>
+
+                                                    <a class="btn btn-link" href="{{ route('password.request') }}">
+                                                        {{ __('Forgot Your Password?') }}
+                                                    </a>
                                                 </div>
                                             </div>
                                         </form>
                                     </div>
                                     <div class="tab-pane" id="Registration">
-                                        <form  class="form-horizontal" action="#" method="get">
+                                        <form  class="form-horizontal" method="POST" action="{{ route('register') }}">
+                                            @csrf
                                             <div class="form-group">
                                                 <label for="email" class="col-sm-2 control-label">
                                                     Name</label>
                                                 <div class="col-sm-10">
-                                                    <div class="row">
-                                                        <div class="col-md-3 col-sm-3 col-xs-3">
-                                                            <select class="form-control">
-                                                                <option>Mr.</option>
-                                                                <option>Ms.</option>
-                                                                <option>Mrs.</option>
-                                                            </select>
-                                                        </div>
-                                                        <div class="col-md-9 col-sm-9 col-xs-9">
-                                                            <input type="text" class="form-control" placeholder="Name" required="required" />
-                                                        </div>
-                                                    </div>
+                                                    <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus>
+                                                    @if ($errors->has('name'))
+                                                        <span class="invalid-feedback" role="alert">
+                                                            <strong>{{ $errors->first('name') }}</strong>
+                                                        </span>
+                                                    @endif
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label for="email" class="col-sm-2 control-label">
                                                     Email</label>
                                                 <div class="col-sm-10">
-                                                    <input type="email" class="form-control" id="email" placeholder="Email" required="required" />
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="mobile" class="col-sm-2 control-label">
-                                                    Mobile</label>
-                                                <div class="col-sm-10">
-                                                    <input type="tel" class="form-control" id="mobile" placeholder="Mobile" required="required" />
+                                                    <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
+                                                    @if ($errors->has('email'))
+                                                        <span class="invalid-feedback" role="alert">
+                                                            <strong>{{ $errors->first('email') }}</strong>
+                                                        </span>
+                                                    @endif
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label for="password" class="col-sm-2 control-label">
                                                     Password</label>
                                                 <div class="col-sm-10">
-                                                    <input type="password" class="form-control" id="password" placeholder="Password" required="required" />
+                                                    <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
+                                                    @if ($errors->has('password'))
+                                                        <span class="invalid-feedback" role="alert">
+                                                            <strong>{{ $errors->first('password') }}</strong>
+                                                        </span>
+                                                    @endif
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="password-confirm" class="col-sm-2 control-label">
+                                                    Confirm Password</label>
+                                                <div class="col-sm-10">
+                                                    <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
                                                 </div>
                                             </div>
                                             <div class="row">

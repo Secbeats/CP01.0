@@ -1,5 +1,11 @@
 @include('includes.head')
-@include('includes.menus')
-@include('includes.slider')
+@if(Auth::user())
+    @include('includes.auth-menus')
+@else
+    @include('includes.menus')
+@endif
+@if(!Auth::user())
+    @include('includes.slider')
+@endif
 @yield('content')
 @include('includes.footer')

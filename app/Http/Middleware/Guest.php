@@ -17,26 +17,11 @@ class Guest
      */
     public function handle($request, Closure $next)
     {
-        $area = Cookie::get('area');
-        if(isset($area)){
-            session(['area' => $area]);
-        }
-        $sCheck = session('area');
-
         $urls = [
-            url('/choose-country'),
-            url('/login'),
-            url('/read-notification'),
-            url('/login/admin'),
-            url('/account/user/verify'),
+            url('/')
         ];
         if(!isset($sCheck) &&  !in_array($request->url(), $urls)){
-            if(Auth::check() && Auth::user()->role == 'super-admin'){
                 return $next($request);
-            }else{
-                return redirect()
-                    ->to('/choose-country');
-            }
         }else{
             return $next($request);
         }

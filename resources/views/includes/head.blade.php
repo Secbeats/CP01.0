@@ -4,14 +4,15 @@
 <!-- head -->
 <head>
     <title>Online Recharge a Corporate Category Bootstrap Responsive Web Template | index :: w3layouts</title>
-    <link href="{{ asset('/public/assets/css/bootstrap.css') }}" rel="stylesheet" type="text/css" media="all" /><!-- bootstrap-CSS -->
-    <link rel="stylesheet" href="{{ asset('/public/assets/css/bootstrap-select.css') }}"><!-- bootstrap-select-CSS -->
-    <link href="{{ asset('/public/assets/css/font-awesome.css') }}" rel="stylesheet" type="text/css" media="all" /><!-- Fontawesome-CSS -->
+    <link href="{{ asset('/assets/css/bootstrap.css') }}" rel="stylesheet" type="text/css" media="all" /><!-- bootstrap-CSS -->
+    <link rel="stylesheet" href="{{ asset('/assets/css/bootstrap-select.css') }}"><!-- bootstrap-select-CSS -->
+    <link href="{{ asset('/assets/css/font-awesome.css') }}" rel="stylesheet" type="text/css" media="all" /><!-- Fontawesome-CSS -->
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script type='text/javascript' src='{{ asset('/public/assets/js/jquery-2.2.3.min.js') }}'></script>
+    <script type='text/javascript' src='{{ asset('/assets/js/jquery-2.2.3.min.js') }}'></script>
+    <link rel="stylesheet" href="{{ asset('/assets/css/bootstrap-datetimepicker.css') }}">
     <!-- Custom Theme files -->
     <!--theme-style-->
-    <link href="{{ asset('/public/assets/css/style.css') }}" rel="stylesheet" type="text/css" media="all" />
+    <link href="{{ asset('/assets/css/style.css') }}" rel="stylesheet" type="text/css" media="all" />
     <!--//theme-style-->
     <!--meta data-->
     <meta name="viewport" content="width=device-width, initial-scale=1">

@@ -12,10 +12,7 @@
 */
 
 
-Route::get('/', function () {
-    return view('pages.home');
-});
-Route::get('/home', 'HomeController@index');
+Route::get('/', 'HomeController@index');
 
 Route::prefix('admin')->group(function(){
 

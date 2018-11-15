@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Auth;
 
 class HomeController extends Controller
 {
@@ -13,7 +14,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        //$this->middleware('auth');
     }
 
     /**
@@ -22,6 +23,16 @@ class HomeController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index(){
-        return view('home');
+        $page = 'pages.home';
+        if(Auth::user()){
+            if(Auth::user()->role == 'donator'){
+                $page = 'pages.donator.dashboard';
+            }elseif(Auth::user()->role == 'donee'){
+                $page = 'pages.donee.dashboard';
+            }else{
+                $page = 'pages.admin.dashboard';
+            }
+        }
+        return view($page);
     }
 }

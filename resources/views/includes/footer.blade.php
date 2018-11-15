@@ -13,12 +13,29 @@
     </div>
 </footer>
 <!--//footer-->
+<div class="modal fade" id="logout-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div  class="modal-dialog" role="document">
+        <div class="modal-content modal-form">
+            <form method="post" action="{{ url('/logout') }}">
+                @csrf
+                <div class="modal-body text-center modal-padding">
+                    <div class="icon-delete text-center"><i class="fas fa-sign-out-alt"></i></div>
+                    <p>Are you sure you want to logout?</p>
+                    <button type="submit" class="btn btn-default">Yes</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 
 <!-- for bootstrap working -->
-<script src="{{ asset('/public/assets/js/bootstrap.js') }}"></script>
+<script src="{{ asset('/assets/js/bootstrap.js') }}"></script>
+<script src="{{ asset('/assets/js/moment.js') }}"></script>
+<script src="{{ asset('/assets/js/bootstrap-datetimepicker.min.js') }}"></script>
 <!-- //for bootstrap working --><!-- Responsive-slider -->
 <!-- Banner-slider -->
-<script src="{{ asset('/public/assets/js/responsiveslides.min.js') }}"></script>
+<script src="{{ asset('/assets/js/responsiveslides.min.js') }}"></script>
 <script>
     $(function () {
         $("#slider").responsiveSlides({
@@ -32,7 +49,7 @@
 <!-- //Banner-slider -->
 <!-- //Responsive-slider -->
 <!-- Bootstrap select option script -->
-<script src="{{ asset('/public/assets/js/bootstrap-select.js') }}"></script>
+<script src="{{ asset('/assets/js/bootstrap-select.js') }}"></script>
 <script>
     $(document).ready(function () {
         var mySelect = $('#first-disabled2');
@@ -56,8 +73,8 @@
 <!-- //Bootstrap select option script -->
 
 <!-- easy-responsive-tabs -->
-<link rel="stylesheet" type="text/css" href="{{ asset('/public/assets/css/easy-responsive-tabs.css') }}" />
-<script src="{{ asset('/public/assets/js/easyResponsiveTabs.js') }}"></script>
+<link rel="stylesheet" type="text/css" href="{{ asset('/assets/css/easy-responsive-tabs.css') }}" />
+<script src="{{ asset('/assets/js/easyResponsiveTabs.js') }}"></script>
 <!-- //easy-responsive-tabs -->
 <!-- here stars scrolling icon -->
 <script type="text/javascript">
@@ -76,8 +93,9 @@
     });
 </script>
 <!-- start-smoth-scrolling -->
-<script type="text/javascript" src="{{ asset('/public/assets/js/move-top.js') }}"></script>
-<script type="text/javascript" src="{{ asset('/public/assets/js/easing.js') }}"></script>
+<script type="text/javascript" src="{{ asset('/assets/js/move-top.js') }}"></script>
+<script type="text/javascript" src="{{ asset('/assets/js/easing.js') }}"></script>
+<script type="text/javascript" src="{{ asset('/assets/js/custom.js') }}"></script>
 <script type="text/javascript">
     jQuery(document).ready(function($) {
         $(".scroll").click(function(event){

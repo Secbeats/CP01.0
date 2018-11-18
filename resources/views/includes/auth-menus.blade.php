@@ -2,7 +2,7 @@
     <div class="container">
         <!--logo-->
         <div class="logo">
-            <h1><a href="{{ url('/') }}">Online Recharge</a></h1>
+            <h1><a href="{{ url('/') }}">Donation</a></h1>
         </div>
         <!--//logo-->
         <div class="w3layouts-login">

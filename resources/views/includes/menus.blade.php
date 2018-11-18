@@ -2,7 +2,7 @@
     <div class="container">
         <!--logo-->
         <div class="logo">
-            <h1><a href="{{ url('/') }}">Online Recharge</a></h1>
+            <h1><a href="{{ url('/') }}">Donation</a></h1>
         </div>
         <!--//logo-->
         <div class="w3layouts-login">
@@ -18,7 +18,7 @@
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
                             &times;</button>
                         <h4 class="modal-title" id="myModalLabel">
-                            Online Recharge</h4>
+                            Donation</h4>
                     </div>
                     <div class="modal-body">
                         <div class="row">

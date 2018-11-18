@@ -10,7 +10,6 @@
                             <li><i class="icon fa fa-television" aria-hidden="true"></i>Request Donation</li>
                             <li><i class="icon fa fa-credit-card" aria-hidden="true"></i>Donator's List</li>
                             <li><i class="icon fa fa-lightbulb-o" aria-hidden="true"></i>Transaction History</li>
-                            <li><i class="icon fa fa-phone" aria-hidden="true"></i>Directors Apoinment</li>
                             <li><i class="icon fa fa-connectdevelop" aria-hidden="true"></i>My Donation Requests</li>
                             <li><i class="icon fa fa-flask" aria-hidden="true"></i>My Profile</li>
                             <li><i class="icon fa fa-tint" aria-hidden="true"></i>How It Works</li>
@@ -210,51 +209,6 @@
                         </div>
                         <!-- /tab4 -->
 
-
-                        <!-- tab5 -->
-                        <div>
-                            <i class="icon fa fa-phone inner-icon" aria-hidden="true"></i>
-                            <div id="tab2" class="tab-grid">
-                                <div class="login-form">
-                                    <form action="pay.html" method="post" id="signup">
-                                        <ol>
-                                            <li>
-                                                <div class="agileits-select">
-                                                    <select class="selectpicker show-tick" data-live-search="true" required="required" >
-                                                        <option data-tokens="Select Circle">Choose From Director's body</option>
-                                                        <option data-tokens="Chennai">Mr. A</option>
-                                                        <option data-tokens="Chennai">Mr. B</option>
-                                                    </select>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="mobile-right ">
-                                                    <h4>Select A Suitable Time</h4>
-                                                    <div class="mobile-rchge">
-                                                        <input class="datepicker-f" type="text" placeholder="Enter amount" name="amount" required="required"  />
-                                                    </div>
-                                                    <div class="clearfix"></div>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="mobile-right ">
-                                                    <div class="controls">
-                                                        <textarea rows="10" cols="80" class="form-control" placeholder="Please write about fixing the meeting." id="message" required data-validation-required-message="Please enter your message." maxlength="999" style="resize:none"></textarea>
-                                                    </div>
-                                                    <div class="clearfix"></div>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <input type="submit" class="submit" value="Send" />
-                                            </li>
-                                        </ol>
-                                    </form>
-
-                                </div>
-                            </div>
-
-                        </div>
-                        <!-- /tab5 -->
                         <!-- tab6 -->
                         <div>
                             <i class="icon fa fa-connectdevelop inner-icon" aria-hidden="true"></i>
@@ -264,32 +218,26 @@
                                         <thead>
                                         <tr>
                                             <th>Serial No</th>
-                                            <th>Donee Name</th>
+                                            <th>Purpose</th>
                                             <th>Amount Needed</th>
                                             <th>Location</th>
-                                            <th>Action</th>
+                                            <th>Status</th>
                                         </tr>
                                         </thead>
                                         <tbody>
                                         <tr>
                                             <td>1</td>
-                                            <td>Mr. X</td>
+                                            <td>Cancer</td>
                                             <td>50000</td>
                                             <td>Bashundhara R/A,Dhaka.</td>
-                                            <td>
-                                                <button class="alert alert-success">Donate</button>
-                                                <button class="alert alert-success">Details</button>
-                                            </td>
+                                            <td style="background-color:red;color: white">Pending</td>
                                         </tr>
                                         <tr>
-                                            <td>1</td>
-                                            <td>Mr. Y</td>
+                                            <td>2</td>
+                                            <td>Heart Sergery</td>
                                             <td>10000</td>
                                             <td>Mirpur Rupnagar R/A,Dhaka.</td>
-                                            <td>
-                                                <button class="alert alert-success">Donate</button>
-                                                <button class="alert alert-success">Details</button>
-                                            </td>
+                                            <td style="background-color:green;color: white">Approved</td>
                                         </tr>
                                         </tbody>
                                     </table>

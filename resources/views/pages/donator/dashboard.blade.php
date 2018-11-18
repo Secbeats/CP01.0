@@ -7,10 +7,9 @@
                     <div class="agileits-tab_nav">
                         <ul class="resp-tabs-list hor_1">
                             <li><i class="icon fa fa-mobile" aria-hidden="true"></i>Account Credit</li>
-                            <li><i class="icon fa fa-television" aria-hidden="true"></i>Withdrawal</li>
                             <li><i class="icon fa fa-credit-card" aria-hidden="true"></i>Donate Fund</li>
                             <li><i class="icon fa fa-lightbulb-o" aria-hidden="true"></i>Transaction History</li>
-                            <li><i class="icon fa fa-phone" aria-hidden="true"></i>Directors Apoinment</li>
+                            <li><i class="icon fa fa-phone" aria-hidden="true"></i>My Donee's</li>
                             <li><i class="icon fa fa-connectdevelop" aria-hidden="true"></i>Donation Requests</li>
                             <li><i class="icon fa fa-flask" aria-hidden="true"></i>My Profile</li>
                             <li><i class="icon fa fa-tint" aria-hidden="true"></i>How It Works</li>
@@ -104,39 +103,7 @@
                             </script>
                         </div>
                         <!-- /tab1 -->
-                        <!-- tab2 -->
-                        <div>
-                            <div class="login-form">
-                                <i class="icon fa fa-television inner-icon" aria-hidden="true"></i>
-                                <form action="pay.html" method="post" id="signup">
-                                    <ol>
-                                        <li>
-                                            <h4>Enter your mobile number</h4>
-                                            <input type="tel" id="tel" name="tel" pattern="\d{10}" placeholder="Enter Mobile Number" required="required" />
-                                        </li>
-                                        <li>
-                                            <div class="mobile-right ">
-                                                <div class="mobile-rchge">
-                                                    <input type="text" placeholder="Enter amount" name="amount" required="required"  />
-                                                </div>
-                                                <div class="clearfix"></div>
-                                            </div>
-                                        </li>
-                                    </ol>
-                                    <ul class="tabs-menu">
-                                        <li><a href="#tab1"><label class="radio"><input type="radio" name="radio" checked=""><i></i>Bkash</label></a></li>
-                                        <li><a href="#tab2"><label class="radio"><input type="radio" name="radio"><i></i>Rocket</label></a></li>
-                                    </ul>
-                                    <ol>
-                                        <li>
-                                            <input type="submit" class="submit" value="Recharge Now" />
-                                        </li>
-                                    </ol>
-                                </form>
 
-                            </div>
-                        </div>
-                        <!-- /tab2 -->
 
                         <!-- tab3 -->
                         <div>
@@ -216,39 +183,30 @@
                             <i class="icon fa fa-phone inner-icon" aria-hidden="true"></i>
                             <div id="tab2" class="tab-grid">
                                 <div class="login-form">
-                                    <form action="pay.html" method="post" id="signup">
-                                        <ol>
-                                            <li>
-                                                <div class="agileits-select">
-                                                    <select class="selectpicker show-tick" data-live-search="true" required="required" >
-                                                        <option data-tokens="Select Circle">Choose From Director's body</option>
-                                                        <option data-tokens="Chennai">Mr. A</option>
-                                                        <option data-tokens="Chennai">Mr. B</option>
-                                                    </select>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="mobile-right ">
-                                                    <h4>Select A Suitable Time</h4>
-                                                    <div class="mobile-rchge">
-                                                        <input class="datepicker-f" type="text" placeholder="Enter amount" name="amount" required="required"  />
-                                                    </div>
-                                                    <div class="clearfix"></div>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="mobile-right ">
-                                                        <div class="controls">
-                                                            <textarea rows="10" cols="80" class="form-control" placeholder="Please write about fixing the meeting." id="message" required data-validation-required-message="Please enter your message." maxlength="999" style="resize:none"></textarea>
-                                                        </div>
-                                                    <div class="clearfix"></div>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <input type="submit" class="submit" value="Send" />
-                                            </li>
-                                        </ol>
-                                    </form>
+                                    <table class="table table-bordered">
+                                        <thead>
+                                        <tr>
+                                            <th>Serial No</th>
+                                            <th>Donee Name</th>
+                                            <th>Amount Contributed</th>
+                                            <th>Location</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>Mr. X</td>
+                                            <td>50000</td>
+                                            <td>Bashundhara R/A,Dhaka.</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>Mr. Y</td>
+                                            <td>10000</td>
+                                            <td>Mirpur Rupnagar R/A,Dhaka.</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
 
                                 </div>
                             </div>

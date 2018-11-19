@@ -6,7 +6,7 @@
                 <div id="parentVerticalTab">
                     <div class="agileits-tab_nav">
                         <ul class="resp-tabs-list hor_1">
-                            <li><i class="icon fa fa-mobile" aria-hidden="true"></i>Account Credit</li>
+                            <li><i class="icon fa fa-mobile" aria-hidden="true"></i>Donate Fund</li>
                             <li><i class="icon fa fa-lightbulb-o" aria-hidden="true"></i>Transaction History</li>
                             <li><i class="icon fa fa-phone" aria-hidden="true"></i>My Donee's</li>
                             <li><i class="icon fa fa-connectdevelop" aria-hidden="true"></i>Donation Requests</li>
@@ -17,6 +17,13 @@
                     </div>
                     <div class="resp-tabs-container hor_1">
                         <!-- tab1 -->
+                        @if(isset($errors))
+                            @foreach($errors as $error)
+                                <div class="alert alert-danger" role="alert">
+                                    {{ $error }}
+                                </div>
+                            @endforeach
+                        @endif
                         <div>
                             <div class="tabs-box">
                                 <img src="{{ asset('/assets/images/mobile.png') }}" class="w3ls-mobile" alt="" data-pin-nopin="true">
@@ -132,8 +139,8 @@
                                         @php
                                         $count = 0
                                         @endphp
-                                        @if(isset($trans))
                                         @foreach($trans as $t)
+                                            @if($t->user_id == Auth::user()->id)
                                             @php $count++ @endphp
                                             <tr>
                                                 <td>{{ $count }}</td>
@@ -141,8 +148,8 @@
                                                 <td>{{ $t->amount }}</td>
                                                 <td>{{ $t->medium }}</td>
                                             </tr>
+                                            @endif
                                         @endforeach
-                                        @endif
                                         </tbody>
                                     </table>
                                 </div>
@@ -235,17 +242,38 @@
                             <i class="icon fa fa-flask inner-icon" aria-hidden="true"></i>
                             <div id="tab2" class="tab-grid">
                                 <div class="login-form">
-                                    <form action="pay.html" method="post" id="signup">
+                                    <form action="" method="post" id="signup">
                                         <ol>
                                             <li>
-                                                <h4>Your Name</h4>
-                                                <input type="text" id="customer" name="name" placeholder="Enter Your Name" required="required" />
+                                                <h4>Name</h4>
+                                                <input type="text" id="customer" name="name" value="{{ $user->name }}">
                                             </li>
                                             <li>
-                                                <h4>Your Email</h4>
-                                                <input type="text" id="customer"  name="email" placeholder="youremail@domain.com" readonly>
+                                                <h4>Email</h4>
+                                                <input type="text" id="customer"  name="email" value="{{ $user->email }}" readonly>
                                             </li>
                                             <li>
+                                                <h4>Country</h4>
+                                                <input type="text" id="customer"  name="country" value="{{ $usd->country }}" required>
+                                            </li>
+                                            <li>
+                                                <h4>Zip Code</h4>
+                                                <input type="text" id="customer"  name="zip" value="{{ $usd->zip }}">
+                                            </li>
+                                            <li>
+                                                <h4>Address</h4>
+                                                <input type="text" id="customer"  name="address" value="{{ $usd->address }}" required>
+                                            </li>
+                                            <li>
+                                                <h4>Contact</h4>
+                                                <input type="text" id="customer"  name="contact" value="{{ $usd->contact }}" required>
+                                            </li>
+                                            <li>
+                                                <h4>Organization</h4>
+                                                <input type="text" id="customer"  name="organization" value="{{ $usd->organization }}">
+                                            </li>
+                                            <li>
+                                                <input type="hidden" name="gender" value="{{ $usd->gender }}">
                                                 <input type="submit" class="submit" value="Update" />
                                             </li>
                                         </ol>

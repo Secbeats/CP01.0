@@ -27,16 +27,25 @@ class HomeController extends Controller
      */
     public function index(){
         $page = 'pages.home';
+        $id = '';
+        $user = '';
+        $usd = '';
         if(Auth::user()){
             if(Auth::user()->role == 'donator'){
+                $id = Auth::id();
                 $page = 'pages.donator.dashboard';
+                $user = User::find($id);
+                $usd = UsersData::where('user_id',$id)->first();
             }elseif(Auth::user()->role == 'donee'){
                 $page = 'pages.donee.dashboard';
             }else{
                 $page = 'pages.admin.dashboard';
             }
         }
-        return view($page);
+        return view($page,[
+            'user' => $user,
+            'usd' => $usd
+        ]);
     }
 
     /**

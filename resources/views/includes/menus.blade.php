@@ -22,7 +22,6 @@
                     </div>
                     <div class="modal-body">
                         <div class="row">
-                            <div class="col-md-8 extra-w3layouts" style="border-right: 1px dotted #C2C2C2;padding-right: 30px;">
                                 <!-- Nav tabs -->
                                 <ul class="nav nav-tabs">
                                     <li class="active"><a href="#Login" data-toggle="tab">Login</a></li>
@@ -37,25 +36,14 @@
                                                 <label for="email" class="col-sm-2 control-label">
                                                     Email</label>
                                                 <div class="col-sm-10">
-                                                    <input type="email" name="email" class="form-control {{ $errors->has('email') ? ' is-invalid' : '' }}" id="email1" placeholder="Email" value="{{ old('email') }}" required autofocus />
+                                                    <input type="email" name="email" class="form-control" id="email1" placeholder="Email" required autofocus />
                                                 </div>
-                                                @if ($errors->has('email'))
-                                                    <span class="invalid-feedback" role="alert">
-                                                        <strong>{{ $errors->first('email') }}</strong>
-                                                    </span>
-                                                @endif
                                             </div>
                                             <div class="form-group">
                                                 <label for="exampleInputPassword1" class="col-sm-2 control-label">
                                                     Password</label>
                                                 <div class="col-sm-10">
-                                                    <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
-
-                                                    @if ($errors->has('password'))
-                                                        <span class="invalid-feedback" role="alert">
-                                                            <strong>{{ $errors->first('password') }}</strong>
-                                                        </span>
-                                                    @endif
+                                                    <input id="password" type="password" class="form-control" name="password" required>
                                                 </div>
                                             </div>
                                             <div class="form-group row">
@@ -83,55 +71,106 @@
                                         </form>
                                     </div>
                                     <div class="tab-pane" id="Registration">
-                                        <form  class="form-horizontal" method="POST" action="{{ route('register') }}">
+                                        <form  class="form-horizontal" method="POST" action="{{ url('/sign-up') }}">
                                             @csrf
                                             <div class="form-group">
-                                                <label for="email" class="col-sm-2 control-label">
+                                                <label for="role" class="col-sm-3 control-label">
+                                                    Sign Up As</label>
+                                                <div class="col-sm-9">
+                                                    <label class="radio-inline"><input type="radio" name="role" value="donator" checked> Donator</label>
+                                                    <label class="radio-inline"><input type="radio" name="role" value="donee"> Donee</label>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="email" class="col-sm-3 control-label">
                                                     Name</label>
-                                                <div class="col-sm-10">
-                                                    <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus>
-                                                    @if ($errors->has('name'))
-                                                        <span class="invalid-feedback" role="alert">
-                                                            <strong>{{ $errors->first('name') }}</strong>
-                                                        </span>
-                                                    @endif
+                                                <div class="col-sm-9">
+                                                    <input id="name" type="text" class="form-control" name="name" required autofocus>
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <label for="email" class="col-sm-2 control-label">
+                                                <label for="email" class="col-sm-3 control-label">
                                                     Email</label>
-                                                <div class="col-sm-10">
-                                                    <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
-                                                    @if ($errors->has('email'))
-                                                        <span class="invalid-feedback" role="alert">
-                                                            <strong>{{ $errors->first('email') }}</strong>
-                                                        </span>
-                                                    @endif
+                                                <div class="col-sm-9">
+                                                    <input id="email" type="email" class="form-control" name="email" required>
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <label for="password" class="col-sm-2 control-label">
+                                                <label for="email" class="col-sm-3 control-label">
+                                                    Re Enter Email</label>
+                                                <div class="col-sm-9">
+                                                    <input id="reemail" type="email" class="form-control" name="reemail" required>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="password" class="col-sm-3 control-label">
                                                     Password</label>
-                                                <div class="col-sm-10">
-                                                    <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
-                                                    @if ($errors->has('password'))
-                                                        <span class="invalid-feedback" role="alert">
-                                                            <strong>{{ $errors->first('password') }}</strong>
-                                                        </span>
-                                                    @endif
+                                                <div class="col-sm-9">
+                                                    <input id="password" type="password" class="form-control" name="password" required>
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <label for="password-confirm" class="col-sm-2 control-label">
+                                                <label for="password-confirm" class="col-sm-3 control-label">
                                                     Confirm Password</label>
-                                                <div class="col-sm-10">
-                                                    <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
+                                                <div class="col-sm-9">
+                                                    <input id="password-confirm" type="password" class="form-control" name="repass" required>
                                                 </div>
                                             </div>
-                                            <div class="row">
-                                                <div class="col-sm-2">
+                                            <div class="form-group">
+                                                <label for="country" class="col-sm-3 control-label">
+                                                    Country</label>
+                                                <div class="col-sm-9">
+                                                    <input id="country" type="text" class="form-control" name="country" required>
                                                 </div>
-                                                <div class="col-sm-10">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="zip" class="col-sm-3 control-label">
+                                                    Zip Code</label>
+                                                <div class="col-sm-9">
+                                                    <input id="zip" type="text" class="form-control" name="zip">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="contact" class="col-sm-3 control-label">
+                                                    Contact No</label>
+                                                <div class="col-sm-9">
+                                                    <input id="contact" type="text" class="form-control" name="contact" required>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="address" class="col-sm-3 control-label">
+                                                    Address</label>
+                                                <div class="col-sm-9">
+                                                    <input id="address" type="text" class="form-control" name="address" required>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="gender" class="col-sm-3 control-label">
+                                                    Gender</label>
+                                                <div class="col-sm-9">
+                                                    <label class="radio-inline"><input type="radio" name="gender" value="male" checked> Male</label>
+                                                    <label class="radio-inline"><input type="radio" name="gender" value="female"> Female</label>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="organization" class="col-sm-3 control-label">
+                                                    Organization</label>
+                                                <div class="col-sm-9">
+                                                    <input id="organization" type="text" class="form-control" name="organization">
+                                                </div>
+                                            </div>
+                                            <div class="clearfix"></div>
+                                            <div class="form-group">
+                                                <div class="col-sm-3"></div>
+                                                <div class="col-sm-9">
+                                                    <input type="checkbox" id="checkbox1" name="checkbox">
+                                                    <label for="checkbox1">I Agree to the <a href="{{ url('/') }}"> Privacy Policy</a> & <a href="{{ url('/') }}" class="sinuo-class"> Terms of Service</a>.</label>
+                                                </div>
+                                            </div>
+                                                <div class="row">
+                                                <div class="col-sm-3">
+                                                </div>
+                                                <div class="col-sm-9">
                                                     <button type="submit" class="submit btn btn-primary btn-sm">
                                                         Save & Continue</button>
                                                     <button type="reset" class="submit btn btn-default btn-sm">
@@ -141,23 +180,6 @@
                                         </form>
                                     </div>
                                 </div>
-                                <div id="OR" >
-                                    OR</div>
-                            </div>
-                            <div class="col-md-4 extra-agileits">
-                                <div class="row text-center sign-with">
-                                    <div class="col-md-12">
-                                        <h3 class="other-nw">
-                                            Sign in with</h3>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <div class="btn-group btn-group-justified">
-                                            <a href="#" class="btn btn-primary">Facebook</a> <a href="#" class="btn btn-danger">
-                                                Google +</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>

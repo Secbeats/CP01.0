@@ -7,7 +7,6 @@
                     <div class="agileits-tab_nav">
                         <ul class="resp-tabs-list hor_1">
                             <li><i class="icon fa fa-mobile" aria-hidden="true"></i>Account Credit</li>
-                            <li><i class="icon fa fa-credit-card" aria-hidden="true"></i>Donate Fund</li>
                             <li><i class="icon fa fa-lightbulb-o" aria-hidden="true"></i>Transaction History</li>
                             <li><i class="icon fa fa-phone" aria-hidden="true"></i>My Donee's</li>
                             <li><i class="icon fa fa-connectdevelop" aria-hidden="true"></i>Donation Requests</li>
@@ -20,24 +19,30 @@
                         <!-- tab1 -->
                         <div>
                             <div class="tabs-box">
-                                <img src="images/mobile.png" class="w3ls-mobile" alt="" data-pin-nopin="true">
-                                <ul class="tabs-menu">
-                                    <li><a href="#tab1"><label class="radio"><input type="radio" name="radio" checked=""><i></i>Bkash</label></a></li>
-                                    <li><a href="#tab2"><label class="radio"><input type="radio" name="radio"><i></i>Rocket</label></a></li>
-                                </ul>
+                                <img src="{{ asset('/assets/images/mobile.png') }}" class="w3ls-mobile" alt="" data-pin-nopin="true">
                                 <div class="clearfix"> </div>
                                 <div class="tab-grids">
                                     <div id="tab1" class="tab-grid">
                                         <div class="login-form">
-                                            <form action="pay.html" method="post" id="signup">
+                                            <form action="{{ url('/donator/account-credit') }}" method="post" id="signup">
+                                                @csrf
+                                                <div class="form-group">
+                                                    <label for="gender" class="col-sm-3 control-label">
+                                                        Payment Medium</label>
+                                                    <div class="col-sm-9">
+                                                        <label class="radio-inline"><input type="radio" name="medium" value="bkash" checked> Bkash</label>
+                                                        <label class="radio-inline"><input type="radio" name="medium" value="rocket"> Rocket</label>
+                                                    </div>
+                                                </div>
+                                                <div class="clearfix"></div><br/>
                                                 <ol>
                                                     <li>
                                                         <h4>Enter your mobile number</h4>
-                                                        <input type="tel" id="tel" name="tel" pattern="\d{10}" placeholder="Enter Mobile Number" required="required" />
+                                                        <input type="text" id="tel" name="mobile_no"  placeholder="Enter Mobile Number" required="required" />
                                                     </li>
                                                     <li>
                                                         <h4>Enter your pin</h4>
-                                                        <input type="password" id="tel" name="tel" pattern="\d{10}" placeholder="Enter Pin Number" required="required" />
+                                                        <input type="password" id="tel" name="pin_no" placeholder="Enter Pin Number" required="required" />
                                                     </li>
                                                     <li>
                                                         <div class="mobile-right ">
@@ -49,7 +54,13 @@
                                                         </div>
                                                     </li>
                                                     <li>
-                                                        <input type="submit" class="submit" value="Add Fund" />
+                                                        <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
+                                                        <input type="hidden" name="user_role" value="donator">
+                                                        <input type="hidden" name="type" value="credit">
+                                                        <input type="hidden" name="status" value="requested">
+                                                        <input type="hidden" name="reference" value="{{ Auth::user()->id }}">
+                                                        <button type="submit" class="submit">Add Fund</button>
+                                                        <button type="reset" class="submit">Cancel</button>
                                                     </li>
                                                 </ol>
                                             </form>
@@ -103,46 +114,6 @@
                             </script>
                         </div>
                         <!-- /tab1 -->
-
-
-                        <!-- tab3 -->
-                        <div>
-                            <i class="icon fa fa-credit-card inner-icon" aria-hidden="true"></i>
-                            <div id="tab2" class="tab-grid">
-                                <div class="login-form">
-                                    <form action="pay.html" method="post" id="signup">
-                                        <ol>
-                                            <li>
-                                                <div class="agileits-select">
-                                                    <select class="selectpicker show-tick" data-live-search="true" required="required" >
-                                                        <option data-tokens="Select Circle">To whom you want to donate</option>
-                                                        <option data-tokens="Chennai">Mr. A</option>
-                                                        <option data-tokens="Chennai">Mr. B</option>
-                                                    </select>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="mobile-right ">
-                                                    <h4>How Much To Pay?</h4>
-                                                    <div class="mobile-rchge">
-                                                        <input type="text" placeholder="Enter amount" name="amount" required="required"  />
-                                                    </div>
-                                                    <div class="clearfix"></div>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <input type="submit" class="submit" value="Donate" />
-                                            </li>
-                                        </ol>
-                                    </form>
-
-                                </div>
-
-                            </div>
-                        </div>
-                        <!-- /tab3 -->
-
-
                         <!-- tab4 -->
                         <div>
                             <i class="icon fa fa-lightbulb-o inner-icon" aria-hidden="true"></i>
@@ -154,22 +125,24 @@
                                                 <th>Serial No</th>
                                                 <th>Transaction Id</th>
                                                 <th>Transaction Amount</th>
-                                                <th>Reference</th>
+                                                <th>Payment Medium</th>
                                             </tr>
                                         </thead>
                                         <tbody>
+                                        @php
+                                        $count = 0
+                                        @endphp
+                                        @if(isset($trans))
+                                        @foreach($trans as $t)
+                                            @php $count++ @endphp
                                             <tr>
-                                                <td>1</td>
-                                                <td>TR-00001</td>
-                                                <td>50000</td>
-                                                <td>Mr.A</td>
+                                                <td>{{ $count }}</td>
+                                                <td>{{ $t->transaction_id }}</td>
+                                                <td>{{ $t->amount }}</td>
+                                                <td>{{ $t->medium }}</td>
                                             </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td>TR-00002</td>
-                                                <td>20000</td>
-                                                <td>Mr.B</td>
-                                            </tr>
+                                        @endforeach
+                                        @endif
                                         </tbody>
                                     </table>
                                 </div>

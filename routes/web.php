@@ -13,12 +13,17 @@
 
 
 Route::get('/', 'HomeController@index');
+Route::post('/sign-up', 'HomeController@registration');
+Route::get('/account/user/verify', 'HomeController@verifyUser');
+Route::get('/sign-up/confirm', 'HomeController@confirm');
 
 Route::prefix('admin')->group(function(){
 
 });
 
 Route::prefix('donator')->group(function(){
+    Route::get('/account-credit','DonatorController@accountCredit');
+    Route::post('/account-credit','DonatorController@accountCredit');
 });
 
 Route::prefix('donee')->group(function(){

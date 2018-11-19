@@ -5,7 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Validator;
 
-class UsersData extends Model
+class Transaction extends Model
 {
     /**
      * The attributes that are mass assignable.
@@ -13,18 +13,20 @@ class UsersData extends Model
      * @var array
      */
     protected $fillable = [
-        'country', 'address', 'gender', 'contact',
+        'user_id', 'user_role', 'medium', 'type','mobile_no','amount',
     ];
 
     protected $rules = array(
-        'country'  => 'required',
-        'address'  => 'required',
-        'gender' => 'required',
-        'contact' => 'required',
+        'user_id'  => 'required',
+        'user_role'  => 'required',
+        'medium' => 'required',
+        'type' => 'required',
+        'mobile_no' => 'required',
+        'amount' => 'required',
     );
     protected $errors;
 
-    protected $table = 'users_data';
+    protected $table = 'transactions';
 
     public function validate($data)
     {

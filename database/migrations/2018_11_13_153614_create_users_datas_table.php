@@ -13,8 +13,15 @@ class CreateUsersDatasTable extends Migration
      */
     public function up()
     {
-        Schema::create('users_datas', function (Blueprint $table) {
+        Schema::create('users_data', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('user_id');
+            $table->string('country');
+            $table->string('zip')->nullable();
+            $table->string('address');
+            $table->string('contact');
+            $table->string('gender');
+            $table->string('organization')->nullable();
             $table->timestamps();
         });
     }
@@ -26,6 +33,6 @@ class CreateUsersDatasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users_datas');
+        Schema::dropIfExists('users_data');
     }
 }

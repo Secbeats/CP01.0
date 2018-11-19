@@ -5,7 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Validator;
 
-class UsersData extends Model
+class DonationRequests extends Model
 {
     /**
      * The attributes that are mass assignable.

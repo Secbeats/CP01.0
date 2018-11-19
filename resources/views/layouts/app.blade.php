@@ -7,5 +7,6 @@
 @if(!Auth::user())
     @include('includes.slider')
 @endif
+@include('includes.messages')
 @yield('content')
 @include('includes.footer')

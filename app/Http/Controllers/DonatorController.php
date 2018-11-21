@@ -53,6 +53,6 @@ class DonatorController extends Controller
                     ->withInput();
             }
         }
-        return view('pages.donator.donate');
+        return view('pages.donator.dashboard');
     }
 }

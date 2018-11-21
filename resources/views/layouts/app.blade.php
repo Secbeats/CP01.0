@@ -8,5 +8,11 @@
     @include('includes.slider')
 @endif
 @include('includes.messages')
+@if(Auth::user())
+    @include('includes.sidebar')
+@endif
 @yield('content')
+@if(Auth::user())
+    @include('includes.sidebar-js')
+@endif
 @include('includes.footer')

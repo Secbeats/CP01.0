@@ -197,4 +197,12 @@ class HomeController extends Controller
         }
 
     }
+
+    public function howItWorks(){
+        return view('pages.how-it-works');
+    }
+
+    public function terms(){
+        return view('pages.terms');
+    }
 }

@@ -21,7 +21,7 @@
                             Donation</h4>
                     </div>
                     <div class="modal-body">
-                        <div class="row">
+                        <div class="row" style="margin-left:-5px;">
                                 <!-- Nav tabs -->
                                 <ul class="nav nav-tabs">
                                     <li class="active"><a href="#Login" data-toggle="tab">Login</a></li>

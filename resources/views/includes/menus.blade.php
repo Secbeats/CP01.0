@@ -2,7 +2,7 @@
     <div class="container">
         <!--logo-->
         <div class="logo">
-            <h1><a href="{{ url('/') }}">Donation</a></h1>
+            <h1><a href="{{ url('/') }}">Helping Ray</a></h1>
         </div>
         <!--//logo-->
         <div class="w3layouts-login">
@@ -18,7 +18,7 @@
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
                             &times;</button>
                         <h4 class="modal-title" id="myModalLabel">
-                            Donation</h4>
+                            Helping Ray</h4>
                     </div>
                     <div class="modal-body">
                         <div class="row" style="margin-left:-5px;">
@@ -46,8 +46,9 @@
                                                     <input id="password" type="password" class="form-control" name="password" required>
                                                 </div>
                                             </div>
-                                            <div class="form-group row">
-                                                <div class="col-md-6 offset-md-4">
+                                            <div class="form-group">
+                                                <div class="col-sm-2"></div>
+                                                <div class="col-sm-10">
                                                     <div class="form-check">
                                                         <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
 
@@ -57,8 +58,9 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="form-group row mb-0">
-                                                <div class="col-md-8 offset-md-4">
+                                            <div class="form-group">
+                                                <div class="col-sm-2"></div>
+                                                <div class="col-sm-10">
                                                     <button type="submit" class="btn btn-primary">
                                                         {{ __('Login') }}
                                                     </button>
@@ -154,9 +156,10 @@
                                             </div>
                                             <div class="form-group">
                                                 <label for="organization" class="col-sm-3 control-label">
-                                                    Organization</label>
+                                                    Type</label>
                                                 <div class="col-sm-9">
-                                                    <input id="organization" type="text" class="form-control" name="organization">
+                                                    <label class="radio-inline"><input type="radio" name="organization" value="Individual" checked> Individual</label>
+                                                    <label class="radio-inline"><input type="radio" name="organization" value="organization"> Organization</label>
                                                 </div>
                                             </div>
                                             <div class="clearfix"></div>

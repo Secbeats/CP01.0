@@ -21,7 +21,6 @@
                     <td>50000</td>
                     <td>Bashundhara R/A,Dhaka.</td>
                     <td>
-                        <button class="alert alert-success">Donate</button>
                         <button class="alert alert-success">Details</button>
                     </td>
                 </tr>
@@ -32,7 +31,6 @@
                     <td>Mirpur Rupnagar R/A,Dhaka.</td>
                     <td>
                         <button class="alert alert-success">Donate</button>
-                        <button class="alert alert-success">Details</button>
                     </td>
                 </tr>
                 </tbody>

@@ -17,14 +17,14 @@ class DonationRequests extends Model
     ];
 
     protected $rules = array(
-        'country'  => 'required',
+        'purpose'  => 'required',
         'address'  => 'required',
-        'gender' => 'required',
+        'amount' => 'required',
         'contact' => 'required',
     );
     protected $errors;
 
-    protected $table = 'users_data';
+    protected $table = 'donation_requests';
 
     public function validate($data)
     {

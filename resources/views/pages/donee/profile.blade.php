@@ -12,7 +12,7 @@
         @endif
         <div id="tab2" class="tab-grid">
             <div class="login-form">
-                <form action="{{ url('/donator/my-profile') }}" method="post" id="signup">
+                <form action="{{ url('/donee/my-profile') }}" method="post" id="signup">
                     @csrf
                     <ol>
                         <li>

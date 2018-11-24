@@ -7,7 +7,6 @@
 @if(!Auth::user())
     @include('includes.slider')
 @endif
-@include('includes.messages')
 @if(Auth::user())
     @include('includes.sidebar')
 @endif

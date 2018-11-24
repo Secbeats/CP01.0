@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Transaction;
+use App\User;
+use App\UsersData;
 use Illuminate\Http\Request;
 use Auth;
 
@@ -53,6 +55,70 @@ class DonatorController extends Controller
                     ->withInput();
             }
         }
-        return view('pages.donator.dashboard');
+        return view('pages.donator.donate');
+    }
+
+    /**
+     * Transaction History
+     **/
+    public function transactionHistory(){
+        $trans = Transaction::where('user_role','donator')
+            ->get();
+        return view('pages.donator.transaction',[
+            'trans' => $trans
+        ]);
+    }
+
+    /**
+     * Donee's list
+     **/
+    public function myDonees(){
+        return view('pages.donator.donee');
+    }
+
+    /**
+     * Donation Requests
+     **/
+
+    public function donationRequests(){
+        return view('pages.donator.requests');
+    }
+
+    /**
+     * Profile page
+     **/
+    public function myProfile(Request $request){
+        $id = Auth::id();
+        $user = User::find($id);
+        $usd = UsersData::where('id',$id)->first();
+        $errors = array();
+        $data = $request->all();
+        if($request->isMethod('post')){
+            $usr = User::find($request->user_id);
+            $ud = UsersData::where('user_id',$request->user_id)->first();
+            if(!empty($data)){
+                $usr->name = $request->name;
+                $usr->save();
+                $ud->country = $request->country;
+                $ud->zip = $request->zip;
+                $ud->gender = $request->gender;
+                $ud->address = $request->address;
+                $ud->contact = $request->contact;
+                $ud->organization = $request->organization;
+                $ud->save();
+                return redirect()
+                    ->to('/donator/my-profile')
+                    ->with('success','Your Profile Updated Successfully !');
+            }else{
+                return redirect()
+                    ->to('/donator/my-profile')
+                    ->with('errors', $errors)
+                    ->withInput();
+            }
+        }
+        return view('pages.donator.profile',[
+            'user' => $user,
+            'usd' => $usd
+        ]);
     }
 }

@@ -3,7 +3,7 @@
 <html>
 <!-- head -->
 <head>
-    <title>Donation</title>
+    <title>Helping Ray</title>
     <link href="{{ asset('/assets/css/bootstrap.css') }}" rel="stylesheet" type="text/css" media="all" /><!-- bootstrap-CSS -->
     <link rel="stylesheet" href="{{ asset('/assets/css/bootstrap-select.css') }}"><!-- bootstrap-select-CSS -->
     <link href="{{ asset('/assets/css/font-awesome.css') }}" rel="stylesheet" type="text/css" media="all" /><!-- Fontawesome-CSS -->

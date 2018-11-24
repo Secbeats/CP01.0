@@ -2147,6 +2147,16 @@ ul.login-icons li a i {
 	vertical-align: middle;
 	border-radius: 5px 0px 0px 5px;
 }
+td.red{
+	background-color:red;
+	color: #ffffff !important;
+	text-align: center;
+}
+td.green{
+	background-color:green;
+	color: #ffffff !important;
+	text-align: center;
+}
 
 ul.login-icons li a.twit i {
 	background: url(../images/img-sprite.png)no-repeat -60px -135px #1191F4;

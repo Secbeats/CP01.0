@@ -3,10 +3,10 @@
     <div class="w3l-footer-bottom">
         <div class="container-fluid">
             <div class="col-md-4 w3-footer-logo">
-                <h2><a href="{{ url('/') }}">Donation</a></h2>
+                <h2><a href="{{ url('/') }}">Helping Ray</a></h2>
             </div>
             <div class="col-md-8 agileits-footer-class">
-                <p >© 2018 Donation. All Rights Reserved | Powered by  <a href="http://secbeats.com/" target="_blank">Secbeats</a> </p>
+                <p >© 2018 Helping Ray. All Rights Reserved | Powered by  <a href="http://secbeats.com/" target="_blank">Secbeats</a> </p>
             </div>
             <div class="clearfix"> </div>
         </div>

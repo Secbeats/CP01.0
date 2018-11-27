@@ -1,5 +1,5 @@
 <div class="categories-section main-grid-border" id="mobilew3layouts">
-    <div class="container">
+    <div class="container" style="margin-top:20px;">
         <div class="category-list">
             <div id="parentVerticalTab">
                 <div class="agileits-tab_nav">

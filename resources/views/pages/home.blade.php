@@ -28,7 +28,7 @@
     <div class="phone" id="mobileappagileits">
         <div class="container">
             <div class="col-md-6">
-                <img src="{{ asset('/assets/images/ph1.png') }}" class="img-responsive" alt=""/>
+                <img src="{{ asset('/public/assets/images/ph1.png') }}" class="img-responsive" alt=""/>
             </div>
             <div class="col-md-6 phone-text">
                 <h4>Online Payment mobile app on your smartphone!</h4>
@@ -84,18 +84,18 @@
         <h3>We are accepted at</h3>
         <div class="container">
             <ul>
-                <li><a href="#"><img class="img-responsive" src="{{ asset('/assets/images/lg.png') }}" alt=""></a></li>
-                <li><a href="#"><img class="img-responsive" src="{{ asset('/assets/images/lg1.png') }}" alt=""></a></li>
-                <li><a href="#"><img class="img-responsive" src="{{ asset('/assets/images/lg2.png') }}" alt=""></a></li>
-                <li><a href="#"><img class="img-responsive" src="{{ asset('/assets/images/lg3.png') }}" alt=""></a></li>
-                <li><a href="#"><img class="img-responsive" src="{{ asset('/assets/images/lg4.png') }}" alt=""></a></li>
+                <li><a href="#"><img class="img-responsive" src="{{ asset('/public/assets/images/lg.png') }}" alt=""></a></li>
+                <li><a href="#"><img class="img-responsive" src="{{ asset('/public/assets/images/lg1.png') }}" alt=""></a></li>
+                <li><a href="#"><img class="img-responsive" src="{{ asset('/public/assets/images/lg2.png') }}" alt=""></a></li>
+                <li><a href="#"><img class="img-responsive" src="{{ asset('/public/assets/images/lg3.png') }}" alt=""></a></li>
+                <li><a href="#"><img class="img-responsive" src="{{ asset('/public/assets/images/lg4.png') }}" alt=""></a></li>
             </ul>
             <ul>
-                <li><a href="#"><img class="img-responsive" src="{{ asset('/assets/images/lg5.png') }}" alt=""></a></li>
-                <li><a href="#"><img class="img-responsive" src="{{ asset('/assets/images/lg6.png') }}" alt=""></a></li>
-                <li><a href="#"><img class="img-responsive" src="{{ asset('/assets/images/lg7.png') }}" alt=""></a></li>
-                <li><a href="#"><img class="img-responsive" src="{{ asset('/assets/images/lg8.png') }}" alt=""></a></li>
-                <li><a href="#"><img class="img-responsive" src="{{ asset('/assets/images/lg9.png') }}" alt=""></a></li>
+                <li><a href="#"><img class="img-responsive" src="{{ asset('/public/assets/images/lg5.png') }}" alt=""></a></li>
+                <li><a href="#"><img class="img-responsive" src="{{ asset('/public/assets/images/lg6.png') }}" alt=""></a></li>
+                <li><a href="#"><img class="img-responsive" src="{{ asset('/public/assets/images/lg7.png') }}" alt=""></a></li>
+                <li><a href="#"><img class="img-responsive" src="{{ asset('/public/assets/images/lg8.png') }}" alt=""></a></li>
+                <li><a href="#"><img class="img-responsive" src="{{ asset('/public/assets/images/lg9.png') }}" alt=""></a></li>
             </ul>
         </div>
     </div>

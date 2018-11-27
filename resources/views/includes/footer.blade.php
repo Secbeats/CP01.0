@@ -30,12 +30,12 @@
 </div>
 
 <!-- for bootstrap working -->
-<script src="{{ asset('/assets/js/bootstrap.js') }}"></script>
-<script src="{{ asset('/assets/js/moment.js') }}"></script>
-<script src="{{ asset('/assets/js/bootstrap-datetimepicker.min.js') }}"></script>
+<script src="{{ asset('/public/assets/js/bootstrap.js') }}"></script>
+<script src="{{ asset('/public/assets/js/moment.js') }}"></script>
+<script src="{{ asset('/public/assets/js/bootstrap-datetimepicker.min.js') }}"></script>
 <!-- //for bootstrap working --><!-- Responsive-slider -->
 <!-- Banner-slider -->
-<script src="{{ asset('/assets/js/responsiveslides.min.js') }}"></script>
+<script src="{{ asset('/public/assets/js/responsiveslides.min.js') }}"></script>
 <script>
     $(function () {
         $("#slider").responsiveSlides({
@@ -49,7 +49,7 @@
 <!-- //Banner-slider -->
 <!-- //Responsive-slider -->
 <!-- Bootstrap select option script -->
-<script src="{{ asset('/assets/js/bootstrap-select.js') }}"></script>
+<script src="{{ asset('/public/assets/js/bootstrap-select.js') }}"></script>
 <script>
     $(document).ready(function () {
         var mySelect = $('#first-disabled2');
@@ -73,8 +73,8 @@
 <!-- //Bootstrap select option script -->
 
 <!-- easy-responsive-tabs -->
-<link rel="stylesheet" type="text/css" href="{{ asset('/assets/css/easy-responsive-tabs.css') }}" />
-<script src="{{ asset('/assets/js/easyResponsiveTabs.js') }}"></script>
+<link rel="stylesheet" type="text/css" href="{{ asset('/public/assets/css/easy-responsive-tabs.css') }}" />
+<script src="{{ asset('/public/assets/js/easyResponsiveTabs.js') }}"></script>
 <!-- //easy-responsive-tabs -->
 <!-- here stars scrolling icon -->
 <script type="text/javascript">
@@ -93,9 +93,9 @@
     });
 </script>
 <!-- start-smoth-scrolling -->
-<script type="text/javascript" src="{{ asset('/assets/js/move-top.js') }}"></script>
-<script type="text/javascript" src="{{ asset('/assets/js/easing.js') }}"></script>
-<script type="text/javascript" src="{{ asset('/assets/js/custom.js') }}"></script>
+<script type="text/javascript" src="{{ asset('/public/assets/js/move-top.js') }}"></script>
+<script type="text/javascript" src="{{ asset('/public/assets/js/easing.js') }}"></script>
+<script type="text/javascript" src="{{ asset('/public/assets/js/custom.js') }}"></script>
 <script type="text/javascript">
     jQuery(document).ready(function($) {
         $(".scroll").click(function(event){

@@ -43,7 +43,7 @@
                                                 <label for="exampleInputPassword1" class="col-sm-2 control-label">
                                                     Password</label>
                                                 <div class="col-sm-10">
-                                                    <input id="password" type="password" class="form-control" name="password" required>
+                                                    <input type="password" class="form-control" name="password" required>
                                                 </div>
                                             </div>
                                             <div class="form-group">
@@ -108,7 +108,7 @@
                                                 <label for="password" class="col-sm-3 control-label">
                                                     Password</label>
                                                 <div class="col-sm-9">
-                                                    <input id="password" type="password" class="form-control" name="password" required>
+                                                    <input type="password" class="form-control" name="password" required>
                                                 </div>
                                             </div>
                                             <div class="form-group">

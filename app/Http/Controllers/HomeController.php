@@ -103,14 +103,14 @@ class HomeController extends Controller
                 $linkExtension = $this->generateRandomString();
                 $link = url('/account/user/verify').'?link='.$linkExtension;
 
-                $transport = (new \Swift_SmtpTransport('ssl://smtp.gmail.com', 465))
-                    ->setUsername("secbeatsoft@gmail.com")
-                    ->setPassword('Ulab123!');
+                $transport = (new \Swift_SmtpTransport('ssl://test.helpingray.com', 465))
+                    ->setUsername("support@test.helpingray.com")
+                    ->setPassword('5^tKJJt{EEbl');
 
                 $mailer = new \Swift_Mailer($transport);
 
-                $message = new \Swift_Message('Donation - Account verify Link');
-                $message->setFrom(['support@donation.com' => 'Account verify link - Donation']);
+                $message = new \Swift_Message('Helping Ray - Account verify Link');
+                $message->setFrom(['support@test.helpingray.com' => 'Account verify link - Helping Ray']);
                 $message->setTo([$request->email => $request->name]);
                 $message->setBody('<html><body>'.
                     '<h1>Hi '.$request->name .',</h1>'.
@@ -130,7 +130,7 @@ class HomeController extends Controller
                       </td>
                   </tr>
              </table>'.
-                    '<br><br>Thank You<br>Donation<br>Customer Care Team</body></html>',
+                    '<br><br>Thank You<br>Helping Ray<br>Customer Care Team</body></html>',
                     'text/html');
 
                 $result = $mailer->send($message);

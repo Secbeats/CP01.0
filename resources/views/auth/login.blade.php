@@ -6,6 +6,19 @@
             <ul class="nav nav-tabs">
                 <li class="active">Donation Login Panel</li>
             </ul>
+            @include('includes.messages')
+            @if(count( $errors ) > 0)
+                @foreach ($errors->all() as $error)
+                    <h1>{{ $error }}</h1>
+                @endforeach
+            @endif
+            @if(isset($errors))
+                @foreach($errors as $error)
+                    <div class="alert alert-danger" role="alert">
+                        {{ $error }}
+                    </div>
+            @endforeach
+            @endif
             <!-- Tab panes -->
             <div class="tab-content">
                 <div class="tab-pane active" id="Login">
